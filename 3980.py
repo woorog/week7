@@ -14,7 +14,7 @@ for i in board[0]:
         q.append(i)
 #
 # while q:
-#     lists=q.popleft()
+#     dp=q.popleft()
 #     for i in
 # print(q)
 #
