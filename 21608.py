@@ -67,6 +67,7 @@ for _ in range(time):
     kboard[y-1].append(0)
     del kboard[y-1][0]
 
+
     print()
 
     for i in range(air[0][0]):
