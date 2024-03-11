@@ -1,0 +1,75 @@
+import heapq
+import sys
+
+
+def dijkstra(maze, start):
+    rows = len(maze)
+    cols = len(maze[0])
+
+    # 시작 지점부터의 최단 경로를 저장하는 배열
+    distance = [[float('inf')] * cols for _ in range(rows)]
+    distance[start[0]][start[1]] = 0
+
+    # 우선순위 큐 생성
+    priority_queue = [(0, start)]
+    while priority_queue:
+        current_distance, (row, col) = heapq.heappop(priority_queue)
+
+        # 현재 위치에서 인접한 상하좌우 칸들을 확인
+        for dr, dc in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
+            nr, nc = row + dr, col + dc
+            # 미로 범위를 벗어나는 경우 무시
+            if nr < 0 or nr >= rows or nc < 0 or nc >= cols:
+                continue
+            # 이동 가능한 경우에만 경로를 업데이트
+            new_distance = current_distance + maze[nr][nc]  # 이동 비용을 고려하여 업데이트
+            if new_distance < distance[nr][nc]:
+                distance[nr][nc] = new_distance
+                heapq.heappush(priority_queue, (new_distance, (nr, nc)))
+    # while priority_queue:
+    #     current_distance, (row, col) = heapq.heappop(priority_queue)
+    #
+    #     # 현재 위치에서 인접한 상하좌우 칸들을 확인
+    #     for dr, dc in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
+    #         nr, nc = row + dr, col + dc
+    #         # 미로 범위를 벗어나는 경우 무시
+    #         if nr < 0 or nr >= rows or nc < 0 or nc >= cols:
+    #             continue
+    #         # 이동 가능한 경우에만 경로를 업데이트
+    #         if maze[nr][nc] == 0:
+    #             new_distance = current_distance + 1
+    #             if new_distance < distance[nr][nc]:
+    #                 distance[nr][nc] = new_distance
+    #                 heapq.heappush(priority_queue, (new_distance, (nr, nc)))
+
+    return distance
+
+# 예제 미로
+
+
+# 시작점
+start_point = (0, 0)
+count=0
+while 1:
+    count+=1
+    lens=int(sys.stdin.readline())
+    if lens==0:
+        break
+    maze = []
+    for _ in range(lens):
+        maze.append(list(map(int,sys.stdin.readline().split())))
+    shortest_distances = dijkstra(maze, start_point)
+    print(f"Problem {count}:",shortest_distances[lens-1][lens-1]+maze[0][0])
+
+
+# 다익스트라 알고리즘 호출
+# shortest_distances = dijkstra(maze, start_point)
+#
+# # 결과 출력
+# print("시작 지점으로부터의 최단 거리:")
+# for row in range(len(maze)):
+#     for col in range(len(maze[0])):
+#         print(shortest_distances[row][col], end=" ")
+#     print()
+#
+
