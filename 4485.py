@@ -34,7 +34,7 @@ def dijkstra(maze, start):
     priority_queue = [(0, start)]
 
     while priority_queue:
-        current_distance, (row, col) = heapq.heappop(priority_queue)
+        now_dis, (row, col) = heapq.heappop(priority_queue)
 
         # 현재 위치에서 인접한 상하좌우 칸들을 확인
         for dr, dc in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
@@ -43,14 +43,14 @@ def dijkstra(maze, start):
             if nr < 0 or nr >= rows or nc < 0 or nc >= cols:
                 continue
             # 이동 가능한 경우에만 경로를 업데이트
-            new_distance = current_distance + maze[nr][nc]  # 이동 비용을 고려하여 업데이트
-            if new_distance < distance[nr][nc]:
-                distance[nr][nc] = new_distance
-                heapq.heappush(priority_queue, (new_distance, (nr, nc)))
+            new_dis = now_dis + maze[nr][nc]  # 이동 비용을 고려하여 업데이트
+            if new_dis < distance[nr][nc]:
+                distance[nr][nc] = new_dis
+                heapq.heappush(priority_queue, (new_dis, (nr, nc)))
 
 
     # while priority_queue:
-    #     current_distance, (row, col) = heapq.heappop(priority_queue)
+    #     now_dis, (row, col) = heapq.heappop(priority_queue)
     #
     #     # 현재 위치에서 인접한 상하좌우 칸들을 확인
     #     for dr, dc in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
@@ -60,10 +60,10 @@ def dijkstra(maze, start):
     #             continue
     #         # 이동 가능한 경우에만 경로를 업데이트
     #         if maze[nr][nc] == 0:
-    #             new_distance = current_distance + 1
-    #             if new_distance < distance[nr][nc]:
-    #                 distance[nr][nc] = new_distance
-    #                 heapq.heappush(priority_queue, (new_distance, (nr, nc)))
+    #             new_dis = now_dis + 1
+    #             if new_dis < distance[nr][nc]:
+    #                 distance[nr][nc] = new_dis
+    #                 heapq.heappush(priority_queue, (new_dis, (nr, nc)))
 
     return distance
 
