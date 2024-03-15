@@ -13,6 +13,73 @@ for i in range(m):
     graph[b].append((a,c))
 
 
+
+def dk(start):
+    q=[]
+    heapq.heappush(q,(0,start))
+    distance[start]=0
+
+    while q:
+        dist,node=heapq.heappop(q)
+        if dist>distance[node[1]]:
+            continue
+        for next in graph[node]:
+            cost=distance[node]+next[1]
+            if cost<distance[next[0]]:
+                distance[next[0]]=cost
+                heapq.heappush(q,(cost,next[0]))
+
+
+
+def dddiiikkk(start):
+    q=[]
+    distance[start]=0
+    heapq.heappush(q,(0,start))
+
+    while q:
+        dist,node=heapq.heappop(q)
+        if dist>distance[node[1]]:
+            continue
+        for next in graph[node]:
+            cost=distance[node]+next[1]
+            if cost<distance[next[0]]:
+                distance[next[0]]=cost
+                heapq.heappush(q,(cost,next[0]))
+
+
+
+
+
+def drk(start):
+    q=[]
+    distance[start]=0
+    heapq.heappush(q,(0,start))
+
+    while q:
+        dist,node=heapq.heappop(q)
+        if dist>distance[node]:
+            continue
+        for next in graph[node]:
+            cost=distance[node]+next[1]
+            if distance[next[0]]>cost:
+                distance[next[0]]=cost
+                heapq.heappush(q,(cost,next[0]))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def dijk(start):
     q=[]
     heapq.heappush(q,(0,start))
