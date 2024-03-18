@@ -19,6 +19,7 @@
 #include "threads/vaddr.h"
 #include "intrinsic.h"
 #ifdef VM
+
 #include "vm/vm.h"
 #endif
 
