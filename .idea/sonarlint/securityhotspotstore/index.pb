@@ -3,3 +3,9 @@
 13144.py,3\9\39eb40f2d4e76ec2bfb6340671a1c215f4ddfbca
 7
 4485.py,9\a\9aa91a9b64d8b1f49c4678025ab700749e0b9db4
+8
+17396.py,1\9\19c3b51b4023f5020602b1eb3a14de643188ffb2
+Å
+Q.idea/sonarlint/securityhotspotstore/3/9/39eb40f2d4e76ec2bfb6340671a1c215f4ddfbca,8\7\878103b2ff6627ae948c9c84cae929374c521a3a
+Å
+Q.idea/sonarlint/securityhotspotstore/9/a/9aa91a9b64d8b1f49c4678025ab700749e0b9db4,2\3\23c7575fb22c80f5a821c53cd9f87272775cf85d
