@@ -461,6 +461,7 @@ load (const char *file_name, struct intr_frame *if_) {
 
 	success = true;
 
+
 done:
 	/* We arrive here whether the load is successful or not. */
 	file_close (file);
