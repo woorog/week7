@@ -5,8 +5,6 @@
 17396.py,1\9\19c3b51b4023f5020602b1eb3a14de643188ffb2
 Å
 Q.idea/sonarlint/securityhotspotstore/3/9/39eb40f2d4e76ec2bfb6340671a1c215f4ddfbca,8\7\878103b2ff6627ae948c9c84cae929374c521a3a
-7
-2580.py,5\3\53e8af9baa324a636797330cb358dc505b19d9b3
 S
 #pintos-kaist-3-6/userprog/syscall.c,f\b\fb884b9874fbc8c9d2f32f82542cec22b6f9f27d
 Y
